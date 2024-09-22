@@ -1,14 +1,12 @@
-import { Server } from 'socket.io'
-import { IOManager } from './managers/IOManager'
 
-const io = IOManager.getIo().io;
-io.on('connnection',(client)=>{
-    client.on('event',data => {
-        const type = data.type;
-    })
-    client.on('disconnect',()=>{
-        
-    })
+import { IoManager } from './managers/IOManager'
+import { UserManager } from './managers/UserManager';
+
+const io = IoManager.getIo();
+
+const userManager = new UserManager();
+io.on('connnection',(socket)=>{
+    userManager.addUser(socket);
 })
 
-io.listen(3000)
+io.listen(8080)
