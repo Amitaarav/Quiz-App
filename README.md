@@ -18,7 +18,8 @@ This is a multiplayer quiz app built using React, Redux, and Socket.io. It allow
 - Socket.io
 - Node.js
 - Express.js
-- MongoDB
+- Typescript
+  
 
 ### Installation
 
